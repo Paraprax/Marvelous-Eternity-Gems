@@ -79,15 +79,16 @@
             var target = "";
             
             function setTarget() {
-                target = Math.floor( Math.random() * 10 );
+                target = Math.floor( Math.random() * 101 ) + 19; // creates a random # between 19 and 120(inclusive)
                 $("#target-score").html(target);
                 console.log(target);
             };
 
+            setTarget();
+
             //realityGem click function
             $("#realityGem").on("click", function() {
                 
-                setTarget();
             });
 
         });
