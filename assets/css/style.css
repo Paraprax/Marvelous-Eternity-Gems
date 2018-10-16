@@ -8,6 +8,7 @@ body {
 
 #instruction-box {
     background-color: turquoise;
+    padding: 0;
 }
 
 #target-box {

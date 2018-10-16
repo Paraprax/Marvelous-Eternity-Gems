@@ -74,7 +74,7 @@
 
             <div class="row"> <!-- row of pointbox-->
                 <div class="col-md-3">
-                    <h1>0</h1>
+                    <h1 id="your-points">0</h1>
                 </div>
             </div>
     </div>
@@ -84,6 +84,7 @@
         $(document).ready(function() {
 
             var target = "";
+            var totalPoints = "";
             
             function setTarget() {
                 target = Math.floor( Math.random() * 101 ) + 19; // creates a random # between 19 and 120(inclusive)
@@ -91,23 +92,29 @@
                 console.log(target);
             };
 
+            function addPoints() {
+                points = Math.floor( Math.random() * 12 ) + 1; // creates a random # between 19 and 120(inclusive)
+                $("#your-points").html(points);
+                console.log(points);
+            };
+
             setTarget();
 
             //realityGem click function
             $("#realityGem").on("click", function() {
-                setTarget();
+                addPoints();
             });
 
             $("#spaceGem").on("click", function() {
-                setTarget();
+                addPoints();
             });
 
             $("#mindGem").on("click", function() {
-                setTarget();
+                addPoints();
             });
 
             $("#timeGem").on("click", function() {
-                setTarget();
+                addPoints();
             });
 
         });
