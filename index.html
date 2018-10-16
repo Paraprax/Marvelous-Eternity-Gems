@@ -46,16 +46,16 @@
 
             <div class="row">  <!-- row of gems -->
                     <div class="col-md-2">
-                        <button class="button btn-danger" id="realityGem"><h1>R Gem</h1></button>
+                        <img src="./assets/images/R Gem.png" class="gem" id="realityGem">
                     </div>
                     <div class="col-md-2">
-                        <button class="button btn-primary" id="spaceGem"><h1>S Gem</h1></button>
+                        <img src="./assets/images/S Gem.png" class="gem" id="spaceGem">
                     </div>
                     <div class="col-md-2">
-                        <button class="button btn-warning" id="mindGem"><h1>M Gem</h1></button>
+                        <img src="./assets/images/M Gem.png" class="gem" id="mindGem">
                     </div>
                     <div class="col-md-2">
-                        <button class="button btn-success" id="timeGem"><h1>T Gem</h1></button>
+                        <img src="./assets/images/T Gem.png" class="gem" id="timeGem">
                     </div>
             </div>
 
@@ -88,7 +88,19 @@
 
             //realityGem click function
             $("#realityGem").on("click", function() {
-                
+                setTarget();
+            });
+
+            $("#spaceGem").on("click", function() {
+                setTarget();
+            });
+
+            $("#mindGem").on("click", function() {
+                setTarget();
+            });
+
+            $("#timeGem").on("click", function() {
+                setTarget();
             });
 
         });
