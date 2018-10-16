@@ -1,0 +1,19 @@
+body {
+    background-image: url("../images/space-background.jpg")
+}
+
+.container {
+    color: white;
+}
+
+#instruction-box {
+    background-color: turquoise;
+}
+
+#target-box {
+    background-color: darkcyan;
+}
+
+#score-box {
+    background-color: darkslateblue;
+}
