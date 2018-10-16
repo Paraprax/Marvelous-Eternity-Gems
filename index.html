@@ -35,7 +35,7 @@
 
             <div class="row">  <!-- row of target number && win/loss score -->
                 <div class="col-md-3">
-                    <h1>39</h1>
+                    <h1 id="target-score">39</h1>
                 </div>
 
                 <div class="col-m6-2">
@@ -46,16 +46,16 @@
 
             <div class="row">  <!-- row of gems -->
                     <div class="col-md-2">
-                        <button class="button btn-danger"><h1>R Gem</h1></button>
+                        <button class="button btn-danger" id="realityGem"><h1>R Gem</h1></button>
                     </div>
                     <div class="col-md-2">
-                        <button class="button btn-primary"><h1>S Gem</h1></button>
+                        <button class="button btn-primary" id="spaceGem"><h1>S Gem</h1></button>
                     </div>
                     <div class="col-md-2">
-                        <button class="button btn-warning"><h1>M Gem</h1></button>
+                        <button class="button btn-warning" id="mindGem"><h1>M Gem</h1></button>
                     </div>
                     <div class="col-md-2">
-                        <button class="button btn-success"><h1>T Gem</h1></button>
+                        <button class="button btn-success" id="timeGem"><h1>T Gem</h1></button>
                     </div>
             </div>
 
@@ -72,9 +72,27 @@
             </div>
     </div>
     
+    <script>
     
+        $(document).ready(function() {
 
+            var target = "";
+            
+            function setTarget() {
+                target = Math.floor( Math.random() * 10 );
+                $("#target-score").html(target);
+                console.log(target);
+            };
+
+            //realityGem click function
+            $("#realityGem").on("click", function() {
+                
+                setTarget();
+            });
+
+        });
     
+    </script>
 
 </body>
 </html>
