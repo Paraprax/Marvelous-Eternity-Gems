@@ -83,8 +83,13 @@
     
         $(document).ready(function() {
 
-            var target = "";
-            var totalPoints = "";
+            //variables
+            var target = ""; 
+
+            var crystalPointArray = [];
+
+            var totalPoints = ""; 
+            //end of variables
             
             function setTarget() {
                 target = Math.floor( Math.random() * 101 ) + 19; // creates a random # between 19 and 120(inclusive)
@@ -92,29 +97,39 @@
                 console.log(target);
             };
 
+            function assignPoints() {
+                for (var i = 0; i < 4; i++){
+                    points = Math.floor( Math.random() * 12 ) + 1; // creates a random # between 1 and 12(inclusive)
+                    crystalPointArray.push(points);
+                    console.log(crystalPointArray);
+                }
+            }
+
             function addPoints() {
-                points = Math.floor( Math.random() * 12 ) + 1; // creates a random # between 19 and 120(inclusive)
+                
                 $("#your-points").html(points);
                 console.log(points);
             };
 
-            setTarget();
+            setTarget(); // reset the target number (currently runs on page refresh only)
+            assignPoints();
+            
 
             //realityGem click function
             $("#realityGem").on("click", function() {
-                addPoints();
+                redPoints();
             });
 
             $("#spaceGem").on("click", function() {
-                addPoints();
+                bluePoints();
             });
 
             $("#mindGem").on("click", function() {
-                addPoints();
+                yellowPoints();
             });
 
             $("#timeGem").on("click", function() {
-                addPoints();
+                greenPoints();
             });
 
         });

@@ -6,6 +6,14 @@ body {
     color: white;
 }
 
+.gem {
+    margin: 2%;
+    width: 150px;
+    border-style: groove;
+    border-width: 2px;
+    border-color: orange;
+}
+
 #instruction-box {
     background-color: turquoise;
     padding: 0;
