@@ -46,8 +46,8 @@
                 </div>
 
                 <div class="col-m6-2" id="score-box">
-                    <h4>Wins: 0</h4>
-                    <h4>Losses: 0</h4>
+                    <h4 id='wins'>Wins: 0</h4>
+                    <h4 id='losses'>Losses: 0</h4>
                 </div>
             </div>
 
@@ -84,7 +84,7 @@
         $(document).ready(function() {
 
             // ~ ~ ~ ~ ~ ~ variables ~ ~ ~ ~ ~ ~
-            var target = ""; 
+            var target = 0; 
 
             var redGem = "";
             var blueGem = "";
@@ -93,6 +93,8 @@
             
             var crystalPointArray = [];
 
+            var wins = 0;
+            var losses = 0;
             var playerPoints = 0;
             // ~ ~ ~ ~ ~ ~ end of variables ~ ~ ~ ~ ~ ~ 
 
@@ -124,6 +126,34 @@
                 console.log(points);
             };
 
+            function updateWinLose() {
+                $("#wins").html("Wins: " + wins);
+                $("#losses").html("Losses: " + losses);
+            }
+
+            function checkStatus() {
+                if (playerPoints > target)
+                {   
+                    updatePoints();
+                    alert("SNAP!");
+                    losses++;
+                    updateWinLose();
+                    reset();
+                }
+                else if (playerPoints === target)
+                {
+                    updatePoints();
+                    alert("Perfectly balanced - as all things should be!");
+                    wins++;
+                    updateWinLose();
+                    reset();
+                }
+                else 
+                {
+                    updatePoints();
+                }
+            }
+
             function reset() {
                 setTarget(); // reset the target number (currently runs on page refresh only)
                 setGemPoints(); //generate the crystalPointArray and assign the points from it to the gem variables
@@ -132,30 +162,29 @@
             };
 
 
-            reset();
+            reset(); // reset function called at page refresh
 
 
             //click events
             $("#realityGem").on("click", function() {
                 playerPoints = playerPoints + redGem;
-                updatePoints();
+                checkStatus();
             });
 
             $("#spaceGem").on("click", function() {
                 playerPoints = playerPoints + blueGem;
-                updatePoints();
+                checkStatus();
             });
 
             $("#mindGem").on("click", function() {
                 playerPoints = playerPoints + yellowGem;
-                updatePoints();
+                checkStatus();
             });
 
             $("#timeGem").on("click", function() {
                 playerPoints = playerPoints + greenGem;
-                updatePoints();
+                checkStatus();
             });
-
 
 
         });
