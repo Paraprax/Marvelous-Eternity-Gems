@@ -78,11 +78,11 @@ $(document).ready(function() {
     function checkStatus() {
         if (playerPoints > target)
         {   
+            lossImage.animate({ opacity: "1" });
             updatePoints();
             alert("SNAP!");
             losses++;
             updateWinLose();
-            lossImage.animate({ opacity: "1" });
             confirm("Play again?");
                 if (confirm) {
                     reset();
@@ -91,11 +91,11 @@ $(document).ready(function() {
         }
         else if (playerPoints === target)
         {
+            winImage.animate({ opacity: "1" });
             updatePoints();
             alert("Perfectly balanced - as all things should be!");
             wins++;
             updateWinLose();
-            winImage.animate({ opacity: "1" });
             confirm("Play again?");
                 if (confirm) {
                     reset();
