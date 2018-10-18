@@ -1,6 +1,9 @@
 $(document).ready(function() {
 
     // ~ ~ ~ ~ ~ ~ variables ~ ~ ~ ~ ~ ~
+    var winImage = $(".thanos-happy");
+    var lossImage = $(".thanos-sad");
+
     var target = 0; 
 
     var redGem = "";
@@ -25,6 +28,7 @@ $(document).ready(function() {
 
     // ask about setting a target that MUST be attainable by adding some combination
     // of the four gem numbers
+    // for-loop with modulus maybe?
     // for (var j = 0; j < crystalPointArray.length; j++) {
         //     if (target % crystalPointArray[j] != 0)
 
@@ -49,6 +53,8 @@ $(document).ready(function() {
         setTarget(); // reset the target number (currently runs on page refresh only)
         setGemPoints(); //generate the crystalPointArray and assign the points from it to the gem variables
         playerPoints = 0;
+        winImage.animate({ opacity: "0" });
+        lossImage.animate({ opacity: "0" });
         updatePoints();
     }; 
     //_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -76,7 +82,12 @@ $(document).ready(function() {
             alert("SNAP!");
             losses++;
             updateWinLose();
-            reset();
+            lossImage.animate({ opacity: "1" });
+            confirm("Play again?");
+                if (confirm) {
+                    reset();
+                } else {
+                }
         }
         else if (playerPoints === target)
         {
@@ -84,7 +95,12 @@ $(document).ready(function() {
             alert("Perfectly balanced - as all things should be!");
             wins++;
             updateWinLose();
-            reset();
+            winImage.animate({ opacity: "1" });
+            confirm("Play again?");
+                if (confirm) {
+                    reset();
+                } else {
+                }
         }
         else 
         {

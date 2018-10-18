@@ -78,3 +78,12 @@ body {
     margin: 5px;
     padding: 10px;
 }
+
+
+.thanos-happy {
+    opacity: 0;
+}
+
+.thanos-sad {
+    opacity: 0;
+}
