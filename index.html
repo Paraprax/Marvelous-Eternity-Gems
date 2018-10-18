@@ -106,10 +106,17 @@
                 console.log(target);
             };
 
+            // ask about setting a target that MUST be attainable by adding some combination
+            // of the four gem numbers
+            // for (var j = 0; j < crystalPointArray.length; j++) {
+               //     if (target % crystalPointArray[j] != 0)
+
+                // } 
+
             function setGemPoints() {
                 for (var i = 0; i < 4; i++) {
                     points = Math.floor( Math.random() * 12 ) + 1; // creates a random #s between 1 and 12(inclusive)
-                    crystalPointArray.push(points);
+                    crystalPointArray[i] = points;  //array is re-written with four new point values each time
                     console.log(crystalPointArray);
                 }
 
