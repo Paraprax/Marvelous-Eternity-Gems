@@ -105,9 +105,8 @@
             };
 
             function setGemPoints() {
-                for (var i = 0; i < 4; i++)
-                {
-                    points = Math.floor( Math.random() * 12 ) + 1; // creates a random # between 1 and 12(inclusive)
+                for (var i = 0; i < 4; i++) {
+                    points = Math.floor( Math.random() * 12 ) + 1; // creates a random #s between 1 and 12(inclusive)
                     crystalPointArray.push(points);
                     console.log(crystalPointArray);
                 }
@@ -119,37 +118,45 @@
 
             }
 
-            setTarget(); // reset the target number (currently runs on page refresh only)
-            setGemPoints(); //generate the crystalPointArray and assign the points from it to the gem variables
-
-
-            function addPoints() {
+            function updatePoints() { //update's the html displaying the user's points
                 
                 $("#player-points").html(playerPoints);
                 console.log(points);
             };
-           
+
+            function reset() {
+                setTarget(); // reset the target number (currently runs on page refresh only)
+                setGemPoints(); //generate the crystalPointArray and assign the points from it to the gem variables
+                playerPoints = 0;
+                updatePoints();
+            };
+
+
+            reset();
+
 
             //click events
             $("#realityGem").on("click", function() {
                 playerPoints = playerPoints + redGem;
-                addPoints();
+                updatePoints();
             });
 
             $("#spaceGem").on("click", function() {
                 playerPoints = playerPoints + blueGem;
-                addPoints();
+                updatePoints();
             });
 
             $("#mindGem").on("click", function() {
                 playerPoints = playerPoints + yellowGem;
-                addPoints();
+                updatePoints();
             });
 
             $("#timeGem").on("click", function() {
                 playerPoints = playerPoints + greenGem;
-                addPoints();
+                updatePoints();
             });
+
+
 
         });
     
