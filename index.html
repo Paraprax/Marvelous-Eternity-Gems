@@ -26,19 +26,26 @@
 
     <div class="container">
             <div class="row">
-                <div class="col-md-4"><h1>Eternity Gems!</h1></div> <!-- row of game title -->
+                <div class="col-md-4"  id="title"><h1>ETERNITY GEMS!</h1></div> <!-- row of game title -->
             </div>
             
-            <div class="row" id="instruction-box"> <!-- row of instruction box -->
-                <div class="col-md-6">
+            <div class="row"> <!-- row of instruction box -->
+                <div class="col-md-6"  id="instruction-box">
 
-                <h3><p>Click on the Eternity Gems to generate power-points!</p>
+                <h3><p>Click on the Eternity Gems to adjust the population of the universe!</p>
 
-                <p>The number of points they generate changes every round, and is a mystery until each is clicked!</p>
+                <p>The numbers they generate changes every round, and are a mystery until each is clicked!</p>
                 
-                <p>Click each gem until your score and the Universal Number are perfectly balanced - as all things should be!</p> 
+                <p>Click each gem until your population and the Universal Number are perfectly balanced - as all things should be!</p> 
                 
                 <p>But be careful not to go too far....</p></h3>
+                </div>
+
+                <div class="col-md-6">
+                    <div id="image-div"></div>
+            
+                    <!-- Captain Planet Image -->
+                    <img src="assets/images/captain-planet.jpg" alt="" class="img captain-planet" style="position:absolute; top:50px; left: 80px; z-index: -20; height: 300px">
                 </div>
             </div>
 
@@ -69,13 +76,13 @@
             </div>
 
             <div class="row"> <!-- row of pointbox title-->
-                <div class="col-md-3">
-                    <h5>"Your Total Points Are:"</h5>
+                <div class="col-md-3" id="pointboxTitle">
+                    <h5>Population Of The Universe (octillions):</h5>
                 </div>
             </div>
 
             <div class="row"> <!-- row of pointbox-->
-                <div class="col-md-3">
+                <div class="col-md-3" id="pointbox">
                     <h1 id="player-points">0</h1>
                 </div>
             </div>

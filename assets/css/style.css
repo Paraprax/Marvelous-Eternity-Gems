@@ -15,14 +15,66 @@ body {
 }
 
 #instruction-box {
-    background-color: turquoise;
-    padding: 0;
+    background-color: indigo;
+    border-style: groove;
+    border-width: 2px;
+    border-color: silver;
+    color: silver;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 2%;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    width: 60%;
+}
+
+#pointbox {
+    background-color: darkslategray;
+    border-style: groove;
+    border-width: 2px;
+    border-color: gray;
+    margin: 5px;
+    margin-left: 0px;
+
+}
+
+#pointboxTitle {
+    background-color: darkslategray;
+    border-style: groove;
+    border-width: 2px;
+    border-color: gray;
+    margin: 5px;
+    margin-left: 0px;
+    
 }
 
 #target-box {
     background-color: darkcyan;
+    border-style: groove;
+    border-width: 2px;
+    border-color: gray;
+    margin: 5px;
+    margin-left: 0px;
+}
+
+#title {
+    background-color: #eeb400;
+    border-color: #926e00;
+    border-style: groove;
+    border-width: 2px;
+    color: #926e00;
+    font-family: cursive;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 #score-box {
     background-color: darkslateblue;
+    border-style: groove;
+    border-width: 2px;
+    border-color: gray;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 5px;
+    padding: 10px;
 }
