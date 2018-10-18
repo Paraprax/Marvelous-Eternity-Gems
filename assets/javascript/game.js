@@ -16,7 +16,7 @@ $(document).ready(function() {
     // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
 
 
-    // setup functions
+    // setup functions _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
     function setTarget() {
         target = Math.floor( Math.random() * 101 ) + 19; // creates a random # between 19 and 120(inclusive)
         $("#target-score").html(target);
@@ -50,10 +50,11 @@ $(document).ready(function() {
         setGemPoints(); //generate the crystalPointArray and assign the points from it to the gem variables
         playerPoints = 0;
         updatePoints();
-    };
+    }; 
+    //_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 
-    //html-updating functions - - - - - - - - - - 
+    //html-updating functions <> <> <> <> <> <> <> <> <> 
     function updatePoints() {
         
         $("#player-points").html(playerPoints);
@@ -64,7 +65,7 @@ $(document).ready(function() {
         $("#wins").html("Wins: " + wins);
         $("#losses").html("Losses: " + losses);
     }
-    // - - - - - - - - - - - - - - - - - - - - - -
+    // <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <>
 
 
     // game logic
