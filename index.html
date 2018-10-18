@@ -74,7 +74,7 @@
 
             <div class="row"> <!-- row of pointbox-->
                 <div class="col-md-3">
-                    <h1 id="your-points">0</h1>
+                    <h1 id="player-points">0</h1>
                 </div>
             </div>
     </div>
@@ -83,13 +83,20 @@
     
         $(document).ready(function() {
 
-            //variables
+            // ~ ~ ~ ~ ~ ~ variables ~ ~ ~ ~ ~ ~
             var target = ""; 
 
+            var redGem = "";
+            var blueGem = "";
+            var yellowGem = "";
+            var greenGem = "";
+            
             var crystalPointArray = [];
 
-            var totalPoints = ""; 
-            //end of variables
+            var playerPoints = 0;
+            // ~ ~ ~ ~ ~ ~ end of variables ~ ~ ~ ~ ~ ~ 
+
+
             
             function setTarget() {
                 target = Math.floor( Math.random() * 101 ) + 19; // creates a random # between 19 and 120(inclusive)
@@ -98,24 +105,53 @@
             };
 
             function assignPoints() {
-                for (var i = 0; i < 4; i++){
+                for (var i = 0; i < 4; i++)
+                {
                     points = Math.floor( Math.random() * 12 ) + 1; // creates a random # between 1 and 12(inclusive)
                     crystalPointArray.push(points);
                     console.log(crystalPointArray);
                 }
+
+                redGem = crystalPointArray[0];   //sets the point-value of all four gems by pulling the four
+                blueGem = crystalPointArray[1];  //random numbers in the crystalPointArray
+                yellowGem = crystalPointArray[2];
+                greenGem = crystalPointArray[3];
+
+            }
+
+            setTarget(); // reset the target number (currently runs on page refresh only)
+            assignPoints(); //generate the crystalPointArray and assign the points from it to the gem variables
+
+
+            function redPoints() {
+                playerPoints = playerPoints + redGem;
+                addPoints();
+            }
+
+            function bluePoints() {
+                playerPoints = playerPoints + blueGem;
+                addPoints();
+            }
+
+            function yellowPoints() {
+                playerPoints = playerPoints + yellowGem;
+                addPoints();
+            }
+
+            function greenPoints() {
+                playerPoints = playerPoints + greenGem;
+                addPoints();
             }
 
             function addPoints() {
                 
-                $("#your-points").html(points);
+                $("#player-points").html(playerPoints);
                 console.log(points);
             };
+           
 
-            setTarget(); // reset the target number (currently runs on page refresh only)
-            assignPoints();
-            
 
-            //realityGem click function
+            //click events
             $("#realityGem").on("click", function() {
                 redPoints();
             });
