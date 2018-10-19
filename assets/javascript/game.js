@@ -74,7 +74,8 @@ $(document).ready(function() {
     // <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <>
 
 
-    function winCondition() {
+    // alerts = = = = = = = = = 
+    function winPrompt() {
         alert("Perfectly balanced - as all things should be!");
         if (confirm("Play again?")) {
             reset();
@@ -83,13 +84,14 @@ $(document).ready(function() {
         }
     }
 
-    function lossCondition() {
+    function lossPrompt() {
         alert("SNAP!");
         if (confirm("Play again?")) {
         reset();
         } else {
         lossImage.animate({ opacity: "1" });
     }}
+    // = = = = = = = = = = = = = 
 
 
     // game logic
@@ -99,7 +101,7 @@ $(document).ready(function() {
             updatePoints();
             losses++;
             updateWinLose();
-            setTimeout(lossCondition, 50);
+            setTimeout(lossPrompt, 50);
             
         }
         else if (playerPoints === target)
@@ -107,7 +109,7 @@ $(document).ready(function() {
             updatePoints();
             wins++;
             updateWinLose();
-            setTimeout(winCondition, 50);
+            setTimeout(winPrompt, 50);
             
         }
         else 
