@@ -74,33 +74,41 @@ $(document).ready(function() {
     // <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <>
 
 
+    function winCondition() {
+        alert("Perfectly balanced - as all things should be!");
+        if (confirm("Play again?")) {
+            reset();
+        } else {
+            winImage.animate({ opacity: "1" });
+        }
+    }
+
+    function lossCondition() {
+        alert("SNAP!");
+        if (confirm("Play again?")) {
+        reset();
+        } else {
+        lossImage.animate({ opacity: "1" });
+    }}
+
+
     // game logic
     function checkStatus() {
         if (playerPoints > target)
         {   
-            lossImage.animate({ opacity: "1" });
             updatePoints();
-            alert("SNAP!");
             losses++;
             updateWinLose();
-            confirm("Play again?");
-                if (confirm) {
-                    reset();
-                } else {
-                }
+            setTimeout(lossCondition, 50);
+            
         }
         else if (playerPoints === target)
         {
-            winImage.animate({ opacity: "1" });
             updatePoints();
-            alert("Perfectly balanced - as all things should be!");
             wins++;
             updateWinLose();
-            confirm("Play again?");
-                if (confirm) {
-                    reset();
-                } else {
-                }
+            setTimeout(winCondition, 50);
+            
         }
         else 
         {
